@@ -16,28 +16,20 @@ type Props = {
 };
 
 const Dish = (props: Props) => {
+  let containerStyle = styles.trendingContainer;
+  let imageStyle = styles.trendingImage;
+  let titleStyle = styles.trendingTitle;
+  if (props.type === 'recent') {
+    containerStyle = styles.trendingContainer;
+    imageStyle = styles.trendingImage;
+    titleStyle = styles.trendingTitle;
+  }
   return (
     <TouchableOpacity
-      style={[
-        styles.container,
-        props.type === 'trending'
-          ? styles.trendingContainer
-          : styles.recentContainer,
-      ]}
+      style={[styles.container, containerStyle]}
       onPress={props.onPress}>
-      <Image
-        source={props.imageSource}
-        style={[
-          styles.image,
-          props.type === 'trending' ? styles.trendingImage : styles.recentImage,
-        ]}
-      />
-      <Text
-        style={[
-          styles.title,
-          props.type === 'trending' ? styles.trendingTitle : styles.recentTitle,
-        ]}
-        numberOfLines={2}>
+      <Image source={props.imageSource} style={[styles.image, imageStyle]} />
+      <Text style={[styles.title, titleStyle]} numberOfLines={2}>
         {props.title}
       </Text>
     </TouchableOpacity>
