@@ -20,9 +20,9 @@ const Dish = (props: Props) => {
   let imageStyle = styles.trendingImage;
   let titleStyle = styles.trendingTitle;
   if (props.type === 'recent') {
-    containerStyle = styles.trendingContainer;
-    imageStyle = styles.trendingImage;
-    titleStyle = styles.trendingTitle;
+    containerStyle = styles.recentContainer;
+    imageStyle = styles.recentImage;
+    titleStyle = styles.recentTitle;
   }
   return (
     <TouchableOpacity

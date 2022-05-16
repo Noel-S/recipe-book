@@ -1,12 +1,12 @@
-import {StyleSheet} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '100%',
     backgroundColor: '#282828',
+    paddingTop: (StatusBar.currentHeight ?? 0) + 28,
     paddingHorizontal: 16,
-    paddingVertical: 28,
   },
   titles: {
     fontSize: 21,
